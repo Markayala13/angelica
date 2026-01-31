@@ -1,0 +1,50 @@
+import React from "react"
+import type { Metadata } from 'next'
+import { Montserrat, Cormorant_Garamond } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import './globals.css'
+
+const _montserrat = Montserrat({ subsets: ["latin"], variable: '--font-sans' });
+const _cormorant = Cormorant_Garamond({ 
+  subsets: ["latin"], 
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-serif' 
+});
+
+export const metadata: Metadata = {
+  title: 'Angelica Aesthetics | Premium Laser Hair Removal & Skin Treatments in Manhattan',
+  description: 'Private laser hair removal and skin-enhancing treatments in Manhattan. Advanced technology, personalized plans, lasting results. Book your consultation today.',
+  generator: 'v0.app',
+  icons: {
+    icon: [
+      {
+        url: '/icon-light-32x32.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/icon-dark-32x32.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
+        url: '/icon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+    apple: '/apple-icon.png',
+  },
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en">
+      <body className={`font-sans antialiased`}>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  )
+}
