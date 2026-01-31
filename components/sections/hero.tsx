@@ -28,7 +28,7 @@ export function Hero() {
           className="w-full h-full object-cover"
           poster="/videos/Video_poster.jpg"
         >
-          <source src="/hero.mp4" type="video/mp4" />
+          <source src="/hero2.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
       </motion.div>
